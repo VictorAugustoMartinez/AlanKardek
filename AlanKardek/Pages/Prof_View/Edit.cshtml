@@ -1,0 +1,81 @@
+﻿@page
+@model AlanKardek.Pages.Prof_View.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = null;
+
+}
+<DOCTYPE html>
+    <html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Entrar</title>
+        <link rel="stylesheet" href="~/AlanKardek.styles.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css%22%3E" />
+
+    </head>
+
+    <body>
+
+
+<h1>Edit</h1>
+
+<h4>Curso</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Curso.Id" />
+            <div class="form-group">
+                <label asp-for="Curso.Nome" class="control-label"></label>
+                <input asp-for="Curso.Nome" class="form-control" />
+                <span asp-validation-for="Curso.Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Curso.Materia" class="control-label"></label>
+                <input asp-for="Curso.Materia" class="form-control" />
+                <span asp-validation-for="Curso.Materia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Curso.Descricao" class="control-label"></label>
+                <input asp-for="Curso.Descricao" class="form-control" />
+                <span asp-validation-for="Curso.Descricao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Curso.Proprietario" class="control-label"></label>
+                <input asp-for="Curso.Proprietario" class="form-control" />
+                <span asp-validation-for="Curso.Proprietario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Curso.DataInicio" class="control-label"></label>
+                <input asp-for="Curso.DataInicio" class="form-control" />
+                <span asp-validation-for="Curso.DataInicio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Curso.Turma" class="control-label"></label>
+                <input asp-for="Curso.Turma" class="form-control" />
+                <span asp-validation-for="Curso.Turma" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input style="margin-top:10px" type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+</body>
+</html>

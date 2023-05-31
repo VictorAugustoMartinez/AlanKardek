@@ -1,0 +1,60 @@
+﻿@page
+@model AlanKardek.Pages.TentandoModel
+@{
+    Layout = null;
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Usuario[0].Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Usuario[0].Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Usuario[0].Senha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Usuario[0].Tipo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Usuario[0].Privilegiado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Usuario[0].Turma)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Usuario)
+        {
+            if(item.Turma == "")
+            {
+                
+            
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Senha)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tipo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Privilegiado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Turma)
+                </td>
+            </tr>
+            }
+        }
+    </tbody>
+</table>
